@@ -1,4 +1,5 @@
 <template>
+  <h1 :classvar="{'title':true, 'title-home':isHome}">FastFoodX</h1>
   <div class="user" v-show="showName">
     Nome: {{ firstName }} <br>
     Sobrenome: {{ lastName }}
@@ -10,7 +11,9 @@
     <div v-else="accessLevel === User">normal User</div>
   </div>
 
+  <formulary></formulary>
   <cabeca v-if="showHeader"/>
+
 
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -19,12 +22,14 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import cabeca from './components/cabeca.vue'
+import formulary from './components/formulary.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    cabeca
+    cabeca,
+    formulary
   },
   data(){
     return{
